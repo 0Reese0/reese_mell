@@ -1,0 +1,49 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db_reese_online_retailers?serverTimezone=Asia/Shanghai&serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto #id????????id??
+  configuration:
+    map-underscore-to-camel-case: false # ??????
+    auto-mapping-behavior: full # ???????????
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+weixin:
+  jscode2sessionUrl: https://api.weixin.qq.com/sns/jscode2session
+  appid: wxcd82924a2332c6ac
+  secret: 676e55542867300458394119ce90e095
+
+#微信支付配置
+# appid
+# mch_id 商户号                  无
+# key 商户的key【API密匙】         无
+# url api请求地址
+# notify_url 服务器异步通知页面路径
+weixinpayconfig:
+  appid: wxcd82924a2332c6ac
+  mch_id: 123456789
+  key: jrBXpy1VPNY0FCFI42EBShLom7KMaRBa
+  url: https://api.mch.weixin.qq.com/pay/unifiedorder
+  notify_url: https://174c-221-12-38-155.ap.ngrok.io/weixinpay/notifyUrl
+
+
+bigTypeImagesFilePath: F://my_material/bigTypeImgs/
+
+productImagesFilePath: F://my_material/productImgs/
+
+swiperImagesFilePath: F://my_material/swiperImgs/
+
+productSwiperImagesFilePath: F://my_material/productSwiperImgs/
